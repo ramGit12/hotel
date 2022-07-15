@@ -17,8 +17,11 @@ import java.util.List;
 public class Reservation {
 
  @Id
- private int transactionId;
- private LocalDate checlIn;
+ @Column(name = "idReservation")
+ private int idReservation;
+ @Column(name = "checkIn")
+ private LocalDate checkIn;
+ @Column(name = "checkOut")
  private LocalDate checkOut;
 
  @ManyToOne

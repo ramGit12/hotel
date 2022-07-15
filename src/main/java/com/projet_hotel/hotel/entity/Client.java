@@ -17,10 +17,15 @@ import java.util.List;
 public class Client {
 
     @Id
+    @Column(name = "idClient")
     private int clientId;
+    @Column(name = "lastname")
     private String lastName;
+    @Column(name = "firstname")
     private String firstName;
+    @Column(name = "phone")
     private String tel;
+    @Column(name = "email")
     private String mail;
 
     @OneToMany(mappedBy = "client")
