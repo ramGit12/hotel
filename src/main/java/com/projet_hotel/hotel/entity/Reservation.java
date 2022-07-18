@@ -1,6 +1,5 @@
 package com.projet_hotel.hotel.entity;
 
-import jdk.internal.logger.LocalizedLoggerWrapper;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

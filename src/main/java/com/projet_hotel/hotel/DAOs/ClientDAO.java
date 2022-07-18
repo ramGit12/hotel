@@ -15,6 +15,7 @@ public class ClientDAO {
     private final EntityManager manager;
 
 
+
     public ClientDAO(EntityManager manager) {
         this.manager = manager;
     }
