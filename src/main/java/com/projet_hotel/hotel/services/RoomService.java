@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public class RoomService {
     private static RoomService instance;
-    private static RoomService getInstance(){
+    public static RoomService getInstance(){
         return instance == null? instance = new RoomService() : instance;
     }
 
@@ -25,7 +25,7 @@ public class RoomService {
     private final List<Room> list = new ArrayList();
 
     public List<Room> getAll(){
-        return new ArrayList<>(list);
+        return new ArrayList<>(dao.getAll());
     }
 
     public Optional<Room> getOne(int id){

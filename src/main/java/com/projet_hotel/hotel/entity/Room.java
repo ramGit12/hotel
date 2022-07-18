@@ -22,7 +22,7 @@ public class Room {
     @Id
     @Column(name = "idRoom")
     private int roomId;
-    @Column(name = "rommNbr")
+    @Column(name = "roomNbr")
     private String roomNbr;
     @Column(name = "roomType")
     private String roomType;
