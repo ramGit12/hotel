@@ -1,6 +1,7 @@
 package com.projet_hotel.hotel.DAOs;
 
 import com.projet_hotel.hotel.entity.Client;
+import com.projet_hotel.hotel.entity.Room;
 import com.projet_hotel.hotel.exceptions.EntityAlreadyExistsException;
 
 import javax.persistence.EntityManager;
@@ -10,28 +11,27 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 
-public class ClientDAO {
+public class RoomDAO {
 
     private final EntityManager manager;
 
-
-    public ClientDAO(EntityManager manager) {
+    public RoomDAO(EntityManager manager) {
         this.manager = manager;
     }
 
     //get by ID
-    public Optional<Client> getById(int id ){
-        return Optional.ofNullable( manager.find(Client.class, id) );
+    public Optional<Room> getById(int id ){
+        return Optional.ofNullable( manager.find(Room.class, id) );
     }
 
     //get all
-    public List<Client> getAll(){
-        TypedQuery<Client> query = manager.createQuery("SELECT c FROM Client c", Client.class);
+    public List<Room> getAll(){
+        TypedQuery<Room> query = manager.createQuery("SELECT r FROM Room r", Room.class);
         return query.getResultList();
     }
 
     //insert one
-    public void insert( Client toInsert ){
+    public void insert( Room toInsert ){
 
         try{
             beginTransact();
@@ -39,7 +39,7 @@ public class ClientDAO {
             commit();
         }
         catch (RollbackException ex){
-            throw new EntityAlreadyExistsException(toInsert.getClientId(), Client.class);
+            throw new EntityAlreadyExistsException(toInsert.getRoomId(), Room.class);
         }
 
     }
@@ -55,21 +55,21 @@ public class ClientDAO {
 
 
     //updating
-    public void update( Client client ){
+    public void update( Room room ){
 
-        if( client == null )
-            throw new IllegalArgumentException("Client cannot be null");
+        if( room == null )
+            throw new IllegalArgumentException("room cannot be null");
 
-        if( !existsById(client.getClientId()))
+        if( !existsById(room.getRoomId()))
             throw new EntityNotFoundException("Entity not found");
 
         beginTransact();
-        manager.merge(client);
+        manager.merge(room);
         commit();
     }
 
     public boolean existsById(int id){
-        TypedQuery<Integer> query = manager.createQuery("SELECT COUNT(c) FROM Client c WHERE c.id = " + id, Integer.class);
+        TypedQuery<Integer> query = manager.createQuery("SELECT COUNT(r) FROM Room r WHERE r.id = " + id, Integer.class);
         return query.getSingleResult() > 0;
     }
 
@@ -80,6 +80,5 @@ public class ClientDAO {
     private void commit(){
         manager.getTransaction().commit();
     }
-
 
 }
