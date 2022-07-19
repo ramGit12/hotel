@@ -17,6 +17,7 @@ import java.util.List;
 public class Client {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idClient")
     private int clientId;
     @Column(name = "lastname")
@@ -28,9 +29,18 @@ public class Client {
     @Column(name = "email")
     private String mail;
 
+    public Client(String lastName, String firstName, String tel, String mail) {
+        this.clientId = clientId;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.tel = tel;
+        this.mail = mail;
+    }
+
     @OneToMany(mappedBy = "client")
     private List<Reservation> reservationListClient;
 
 
-
+    public Client(String id, String nom, String prenom, String tel, String email) {
+    }
 }

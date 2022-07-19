@@ -23,7 +23,7 @@ public class ReservationService {
         System.out.println("recup de l'instance du service");
         return instance == null ? instance = new ReservationService() : instance;
     }
-    private ReservationService() {}
+    public ReservationService() {}
     // endregion
 
     private final List<Reservation> list = new ArrayList<>();

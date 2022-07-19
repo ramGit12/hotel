@@ -19,7 +19,7 @@ public class RoomService {
     EntityManagerFactory emf  = Persistence.createEntityManagerFactory("default");
     EntityManager em = emf.createEntityManager();
     RoomDAO dao = new RoomDAO(em);
-    private RoomService(){
+    public RoomService(){
     }
 
     private final List<Room> list = new ArrayList();

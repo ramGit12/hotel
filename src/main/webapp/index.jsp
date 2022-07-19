@@ -51,11 +51,15 @@
 <label for="three+"> 3 personnes et plus </label><br>
 <br>
     <div id="resa">
-        <input class="date" type="text" value=" check-in " alt=" date de debut de séjour "><input  class="date" type="text" value=" check-out " alt=" date de fin de séjour ">
-        <input  class="date" type="datetime-local" value=" check-in " alt=" date de debut de séjour ">
-        <div class="btn_resa">
-            <a href="jsps/rooms.jsp"> Reserver une chambre</a>
-        </div>
+        <form action="rooms" method="post">
+            <input class="date" type="text" value=" check-in " alt=" date de debut de séjour " name="checkIn">
+            <input  class="date" type="text" value=" check-out " alt=" date de fin de séjour " name="checkOut">
+            <div class="btn_resa">
+                <button type="submit"> Reserver une chambre</button>
+            </div>
+        </form>
+
+        <!-- <input  class="date" type="datetime-local" value=" check-in " alt=" date de debut de séjour "> -->
     </div>
     <div>
         <a href="jsps/rooms">Modifier votre réservation</a><br>

@@ -13,8 +13,8 @@
 <body>
     <h1>Votre paiement a été accepté</h1>
     <h3>Voici les details de votre reservation</h3>
-    <h3>check-in: <span><%= request.getAttribute("check-in") %></span> </h3>
-    <h3>check-out: </h3>
+    <h3>check-in: <%= request.getAttribute("checkIn")%></h3>
+    <h3>check-out: <%= request.getAttribute("checkOut")%></h3>
     <h3>type de chambre: </h3>
     <h3>nombre de personne: </h3>
 </body>

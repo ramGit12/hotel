@@ -21,12 +21,17 @@ public class RoomServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+//        request.setAttribute("checkIn", request.getAttribute("checkIn") );
+//        request.setAttribute("checkOut", request.getAttribute("checkOut") );
+//        request.getRequestDispatcher("/jsps/rooms.jsp" ).forward(request, response);
+//        //response.sendRedirect("/jsps/rooms.jsp");
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Room> rooms = new ArrayList<>();
-        rooms = service.getAll();
-        response.sendRedirect(request.getContextPath()+"/jsps/rooms.jsp");
+
+        request.getRequestDispatcher("/jsps/rooms.jsp" ).forward(request, response);
+
     }
 }

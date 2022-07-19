@@ -13,37 +13,47 @@
 <h3>Introduisez vos données bancaires:</h3> <br />
     <div class="flex-3">
         <div class="flex-1">
-            <span class="line">Card number </span>
-            <span class="line">date d'espiration</span>
-            <span class="line">CSC</span>
-            <span class="line">nom</span>
-            <span class="line">prenom</span>
-            <span class="line">adresse</span>
-            <span class="line">adresse de facturation</span>
-            <span class="line">pays</span>
-            <span class="line">ville</span>
-            <span class="line">CAP</span>
-            <span class="line">Tel</span>
-            <span class="line">GSM</span>
-            <span class="line">e-mail</span>
+
+
+
+
+
+
+
+
+
+
+
         </div>
         <div class="flex-2">
-            <form action="PayementServlet" method="get">
-                <input type="text" name="name" ><br />
-            <input type="text" name="name" placeholder="jj"><br />
-            <input type="text" name="name" placeholder="mm"><br />
-            <input type="text" name="name" placeholder="aa"><br />
-            <input type="text" name="name" placeholder="CSC"><br />
-            <input type="text" name="name" placeholder="nom"><br />
-            <input type="text" name="name" placeholder="prenom"><br />
-            <input type="text" name="name" placeholder="adresse"><br />
-            <input type="text" name="name" placeholder="adresse de facturation"><br />
-            <input type="text" name="name" placeholder="pays"><br />
-            <input type="text" name="name" placeholder="ville"><br />
-            <input type="text" name="name" placeholder="CAP"><br />
-            <input type="text" name="name" placeholder="Tel"><br />
-            <input type="text" name="name" placeholder="GSM"><br />
-            <input type="text" name="name" placeholder="e-mail"><br />
+            <form action="PayementServlet" method="post">
+                <span class="line">ID </span><input type="text" name="id" ><br />
+                <span class="line">date d'espiration</span>
+                <input type="text" name="jj" ><br />
+            <input type="text" name="mm" ><br />
+            <input type="text" name="aa" ><br />
+                <span class="line">CSC</span>
+            <input type="text" name="csc" ><br />
+                <span class="line">nom</span>
+            <input type="text" name="nom" ><br />
+                <span class="line">prenom</span>
+            <input type="text" name="prenom" ><br />
+                <span class="line">adresse</span>
+            <input type="text" name="adresse" ><br />
+                <span class="line">adresse de facturation</span>
+            <input type="text" name="adresseFacturation" ><br />
+                <span class="line">pays</span>
+            <input type="text" name="pays" ><br />
+                <span class="line">ville</span>
+            <input type="text" name="ville" ><br />
+                <span class="line">CAP</span>
+            <input type="text" name="cap" ><br />
+                <span class="line">Tel</span>
+            <input type="text" name="tel" ><br />
+                <span class="line">GSM</span>
+            <input type="text" name="gsm" ><br />
+                <span class="line">e-mail</span>
+            <input type="text" name="email" ><br />
             <button class="button" type="submit">payer</button>
             </form>
         </div>

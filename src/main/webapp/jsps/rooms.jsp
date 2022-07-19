@@ -22,7 +22,9 @@
 
 <%
     List<Room> list = service.getAll();
+
 %>
+
 <h1>Toutes les Chambre</h1>
 
 <ul>
@@ -32,7 +34,7 @@
             <p><span>Type:</span> <%= r.getRoomType() %> </p>
             <p><span>prix:</span> <%= r.getPrice()%> $ </p>
             <p><span>Capacité:</span> <%= r.getCapacity()%> Personne(s) </p>
-            <p><a href="bill?id=<%= r.getRoomId() %>">Choisir la chambre</a></p>
+            <p><a href="bill.jsp?id=<%= r.getRoomId() %>">Choisir la chambre</a></p>
 
         </div>
     </li>

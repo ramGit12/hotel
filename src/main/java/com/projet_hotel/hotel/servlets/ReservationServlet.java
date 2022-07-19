@@ -1,6 +1,7 @@
 package com.projet_hotel.hotel.servlets;
 
 import com.projet_hotel.hotel.entity.Client;
+import com.projet_hotel.hotel.entity.Reservation;
 import com.projet_hotel.hotel.entity.Room;
 import com.projet_hotel.hotel.services.ClientService;
 import com.projet_hotel.hotel.services.RoomService;
@@ -11,7 +12,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.Optional;
 
-@WebServlet(name = "RoomServlet", value = "/RoomServlet")
+@WebServlet(name = "ReservationServlet", value = "/reserv")
 public class ReservationServlet extends HttpServlet {
 
     RoomService roomService = RoomService.getInstance();
@@ -22,16 +23,24 @@ public class ReservationServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // logique metier
 
-        Optional<Client> client = clientService.getOne(Integer.parseInt(request.getParameter("id")));
-        request.setAttribute("client", client);
-        request.getRequestDispatcher("resume.jsp").forward(request, );
-        Optional<Room> room = roomService.getOne(Integer.parseInt(request.getParameter("id")));
-        request.setAttribute("room", room);
-        request.getRequestDispatcher("resume.jsp").forward( request, response );
+//        Optional<Client> client = clientService.getOne(Integer.parseInt(request.getParameter("id")));
+//        request.setAttribute("client", client);
+//        request.getRequestDispatcher("resume.jsp").forward(request, );
+//        Optional<Room> room = roomService.getOne(Integer.parseInt(request.getParameter("id")));
+//        request.setAttribute("room", room);
+//        request.getRequestDispatcher("resume.jsp").forward( request, response );
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+//        String checkIn = request.getParameter("checkIn");
+//        String checkOut = request.getParameter("checkOut");
+//
+//        request.setAttribute("checkIn", checkIn);
+//        request.setAttribute("checkOut", checkOut);
+//
+//        request.getRequestDispatcher("/rooms" ).forward(request, response);
 
     }
 }

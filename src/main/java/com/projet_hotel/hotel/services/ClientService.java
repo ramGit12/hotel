@@ -2,6 +2,7 @@ package com.projet_hotel.hotel.services;
 
 import com.projet_hotel.hotel.DAOs.ClientDAO;
 import com.projet_hotel.hotel.entity.Client;
+import com.projet_hotel.hotel.listeners.JpaListener;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -12,10 +13,7 @@ import java.util.Optional;
 
 public class ClientService {
 
-    private ClientDAO dao;
-
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
-    EntityManager em = emf.createEntityManager();
+    private final ClientDAO dao = new ClientDAO();
 
     private static ClientService instance;
     public static ClientService getInstance(){
@@ -23,10 +21,8 @@ public class ClientService {
         return instance == null ? instance = new ClientService() : instance;
     }
 
-    private ClientService() {}
+    public ClientService() {}
     // endregion
-
-    private final List<Client> list = new ArrayList<>();
 
     public List<Client> getAll(){
         return dao.getAll();
@@ -35,8 +31,6 @@ public class ClientService {
     public Optional<Client> getOne(int id){
         return dao.getById(id);
     }
-
-
 
     public void insert(Client toInsert){
         dao.insert(toInsert);

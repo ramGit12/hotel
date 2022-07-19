@@ -2,6 +2,7 @@ package com.projet_hotel.hotel.DAOs;
 
 import com.projet_hotel.hotel.entity.Reservation;
 import com.projet_hotel.hotel.exceptions.EntityAlreadyExistsException;
+import com.projet_hotel.hotel.listeners.JpaListener;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
@@ -12,11 +13,10 @@ import java.util.Optional;
 
 public class ReservationDAO {
 
-    private final EntityManager manager;
+    private final EntityManager manager = JpaListener.createEntityManager();
 
 
     public ReservationDAO(EntityManager manager) {
-        this.manager = manager;
     }
 
     //getOne
