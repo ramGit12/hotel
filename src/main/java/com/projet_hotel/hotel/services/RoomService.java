@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public class RoomService {
     private static RoomService instance;
-    private static RoomService getInstance(){
+    public static RoomService getInstance(){
         return instance == null? instance = new RoomService() : instance;
     }
 

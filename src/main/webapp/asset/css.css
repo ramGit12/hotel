@@ -1,0 +1,21 @@
+.line {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-3 {
+    display: flex;
+    align-content: center;
+}
+
+.flex-1 {
+    padding-left: 1%;
+}
+
+.flex-2 {
+    padding-left: 1%;
+}
+
+
+
+
