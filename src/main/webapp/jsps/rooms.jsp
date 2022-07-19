@@ -31,7 +31,7 @@
         <div>
             <p><span>Type:</span> <%= r.getRoomType() %> </p>
             <p><span>prix:</span> <%= r.getPrice()%> $ </p>
-            <p><span>Capacité:</span> <%= r.getCapacity()%> $ </p>
+            <p><span>Capacité:</span> <%= r.getCapacity()%> Personne(s) </p>
             <p><a href="bill?id=<%= r.getRoomId() %>">Choisir la chambre</a></p>
 
         </div>
